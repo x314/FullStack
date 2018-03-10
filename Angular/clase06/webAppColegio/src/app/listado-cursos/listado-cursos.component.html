@@ -1,0 +1,29 @@
+
+<div class="container">
+  <div class="row">
+      <div class="col-6">
+        <a class="btn btn-primary" [routerLink]="['/cursos', 'nuevo']">Insertar</a>
+        <!-- <a routerLink="/cursos/nuevo">Insertar</a> -->
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Curso</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let curso of listado">
+              <td>{{curso.idCurso}}</td>
+              <td>{{curso.titulo}}</td>
+              <td>
+								<!-- <a href="#" class="btn btn-success" (click)="editar(curso.idCurso)">Editar</a> -->
+                <button class="btn btn-success" (click)="editar(curso.idCurso)"> Editar</button>
+                <button class="btn btn-danger" (click)="eliminar(curso.idCurso)"> Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+</div>

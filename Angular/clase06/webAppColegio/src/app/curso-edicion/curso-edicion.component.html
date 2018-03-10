@@ -1,0 +1,15 @@
+
+<div class="container">
+	<div class="row">
+		<div class="col-6">
+			<form (ngSubmit)="grabar()" #f="ngForm" *ngIf="curso">
+				<div class="form-group">
+					<input type="text" name="title" id="" class="form-control" placeholder="Title" [(ngModel)]="curso.titulo" required>
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary" [disabled]="!f.valid || desactivado">Guardar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
