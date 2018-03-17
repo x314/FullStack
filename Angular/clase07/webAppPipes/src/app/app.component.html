@@ -1,0 +1,28 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="filtro">
+      </div>
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Actor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let movie of movies | filtrarLista: filtro: 'category'">
+            <td>{{movie.title | uppercase | reducidor: 5}}</td>
+            <td>{{movie.category}}</td>
+            <td>{{movie.date | date: 'fullDate'}}</td>
+            <td>{{movie.actor}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
