@@ -1,0 +1,27 @@
+
+/* article {
+	height: 700px;
+	width: 100%;
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+	div {
+		width: 200px;
+		height: 200px;
+	}
+		.rojo {
+			background-color: red;
+		}
+		.verde {
+			background-color: green;
+		}
+		.amarillo {
+			background-color: yellow;
+		} */
+
+form {
+	background-color: gray;
+}
