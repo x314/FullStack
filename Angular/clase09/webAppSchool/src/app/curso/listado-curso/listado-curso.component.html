@@ -1,0 +1,39 @@
+
+<!-- de donde vienen los datos -->
+<mat-table [dataSource]="dataSource">
+
+  <!-- me definen las columnas que se podrian mostrar -->
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef>
+      Título
+    </mat-header-cell>
+    <mat-cell *matCellDef="let registro">
+      {{registro.title}}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="fechaCreacion">
+    <mat-header-cell *matHeaderCellDef>
+      Fecha de Creación
+    </mat-header-cell>
+    <mat-cell *matCellDef="let registro">
+      {{registro.fechaCreacion}}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="eliminado">
+    <mat-header-cell *matHeaderCellDef>
+      Estado
+    </mat-header-cell>
+    <mat-cell *matCellDef="let registro">
+      {{registro.eliminado}}
+    </mat-cell>
+  </ng-container>
+
+  <!-- que columnas se van a mostrar -->
+  <mat-header-row *matHeaderRowDef="columnasAMostrar"></mat-header-row>
+
+  <!-- crea un vinculo entre la data y las columnas -->
+  <mat-row *matRowDef="let registros; columns: columnasAMostrar"></mat-row>
+
+</mat-table>
