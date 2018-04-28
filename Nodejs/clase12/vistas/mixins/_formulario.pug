@@ -1,0 +1,8 @@
+
+mixin formulario(product = {})
+	form(action="/products/add", method="post")
+		.input-text
+			label(for="nombre") Nombre del producto
+			input(type="text", name="nombre", id="nombre")
+		.input-text
+			button.btn.waves-effects.waves-light(type="submit") Grabar

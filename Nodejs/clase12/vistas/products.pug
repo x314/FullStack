@@ -1,0 +1,27 @@
+
+extends base
+
+include mixins/_formulario
+
+block contenido
+	.container
+		.row
+			h1.col.s12 #{tituloPagina.toUpperCase()}
+
+			.card.col.s8.push-s2
+				.card-content
+					table
+						thead
+							tr
+								th ID
+								th Product
+						tbody
+							if lista.length > 5
+								each item in lista
+									tr
+										td= item.id
+										td= item.nombre
+							else
+								p Solo hay 5 o menos productos
+					
+					+formulario()
