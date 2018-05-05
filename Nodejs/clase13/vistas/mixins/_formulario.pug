@@ -1,0 +1,32 @@
+
+mixin formulario(titulo, reg = null)
+  h1= titulo
+
+  form(action=`/multicines/${reg._id || ''}`, method="post", enctype="application/x-www-form-urlencoded")
+
+    if reg._id
+      input(type="hidden", name="_method", value="PUT")
+    
+    .input-field
+      input(type="text", name="nombre", id="nombre", value=reg.nombre)
+      label(for="nombre") Nombre
+
+    .input-field
+      textarea(name="descripcion", id="descripcion", cols="30", rows="10").materialize-textarea= reg.descripcion
+      label(for="descripcion") Descripción
+
+    .input-field
+      input(type="number", name="numeroSalas", id="numeroSalas", value=reg.numeroSalas)
+      label(for="numeroSalas") Número de salas
+    
+    .input-field
+      - const caracteristicas = ['2D', '3D', 'DBOX', 'XTREME']
+      - const lista = reg.caracteristicas || []
+      each caracteristica in caracteristicas
+        p
+          label
+            input(type='checkbox', name="caracteristicas", value=caracteristica, checked=lista.includes(caracteristica))
+            span #{caracteristica}
+
+    .input-field
+      button(type="submit").btn.teal.waves-effect.waves-light= titulo

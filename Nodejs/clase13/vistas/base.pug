@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Document
+
+    link(rel="stylesheet", href="/js/vendor/materialize/css/materialize.min.css")
+  body
+
+    nav
+      .nav-wrapper
+        a.brand-logo(href='#') Logo
+        ul#nav-mobile.right.hide-on-med-and-down
+          li
+            a(href='/multicines') Multicines
+          li
+            a(href='/multicines/add') Agregar
+    
+    block contenido
+
+    script(src="/js/vendor/materialize/js/materialize.min.js")

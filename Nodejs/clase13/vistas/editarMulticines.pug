@@ -1,0 +1,11 @@
+
+extends base
+
+include mixins/_formulario
+
+block contenido
+  .container
+    .row
+      .card.col.s6.push-s3
+        .card-content
+          +formulario(titulo, registro)
